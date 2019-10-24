@@ -1,0 +1,73 @@
+counter = counter+1;
+
+IF state == 0 THEN
+		RedLightCarVertical = 0;
+		YellowLightCarVertical =0;
+		GreenLightCarVertical = 1;
+		
+		GreenLightPedestriansHorizontal = 1;
+		RedLightPedestriansHorizontal = 0;
+		
+		GreenLightPedestriansVertical = 0;
+		RedLightPedestriansVertical = 1;
+
+		RedLightCarHorizontal = 1;
+		YellowLightCarHorizontal = 0;
+		GreenLightCarHorizontal = 0;
+	IF counter > 30 THEN
+		counter = 0;
+		state = state+1;
+	ENDIF;
+ENDIF;
+
+IF state == 1 THEN
+	IF counter < 3 THEN
+		GreenLightCarVertical = 0;
+		YellowLightCarVertical = 1;
+	ENDIF;
+	IF counter > 2 AND counter < 6 THEN
+		RedLightCarVertical = 1;
+		YellowLightCarVertical = 0;
+		YellowLightCarHorizontal = 1;
+	ENDIF;
+	IF counter > 5 THEN
+	counter = 0;
+	state = state +1;
+	ENDIF;
+ENDIF;
+
+IF state == 2 THEN
+		YellowLightCarVertical = 0;
+		GreenLightCarHorizontal = 1;
+		YellowLightCarHorizontal = 0;
+		RedLightCarHorizontal = 0;
+		
+		GreenLightPedestriansHorizontal = 0;
+		RedLightPedestriansHorizontal = 1;
+		
+		GreenLightPedestriansVertical = 1;
+		RedLightPedestriansVertical =0;
+		
+	IF counter > 30 THEN
+	counter = 0;
+	state = state +1;
+	ENDIF;
+ENDIF;
+
+
+IF state == 3 THEN
+	IF counter < 3 THEN
+		GreenLightCarHorizontal = 0;
+		YellowLightCarHorizontal = 1;
+	ENDIF;
+	IF counter > 2 AND counter < 6 THEN
+		RedLightCarHorizontal = 1;
+		YellowLightCarHorizontal = 0;
+		YellowLightCarVertical = 1;
+	ENDIF;
+	IF counter > 5 THEN
+	counter = 0;
+	state = 0;
+	ENDIF;
+ENDIF;
+
