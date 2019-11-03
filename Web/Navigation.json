@@ -7972,6 +7972,17 @@
                     "ParentId": 69,
                     "UniqueKeyId": 6762,
                     "Children": null
+                },
+                {
+                    "Type": 2,
+                    "Name": "ResetButton",
+                    "Id": 681,
+                    "Desc": "ResetButton",
+                    "Icon": null,
+                    "Priority": 0,
+                    "ParentId": 69,
+                    "UniqueKeyId": 6812,
+                    "Children": null
                 }
             ]
         },
